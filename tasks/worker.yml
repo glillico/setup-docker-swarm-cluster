@@ -1,0 +1,16 @@
+---
+- name: Setup worker nodes.
+  hosts: worker
+  become: true
+
+  tasks:
+    - name: Install required packages.
+      ansible.builtin.package:
+        name: python3-docker
+        state: present
+
+    - name: Add worker nodes to swarm.
+      docker_swarm:
+        state: join
+        join_token: "{{ hostvars[groups['manager'][0]]['__dsc_swarm_info']['swarm_facts']['JoinTokens']['Worker'] }}"
+        remote_addrs: "{{ groups['manager'][0] }}"

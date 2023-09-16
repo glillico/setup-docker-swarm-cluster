@@ -1,0 +1,16 @@
+---
+- name: Install docker on all nodes.
+  hosts: swarm
+  become: true
+
+  vars:
+    docker_users: DOCKER_USER_NAME
+
+  roles:
+    - role: geerlingguy.docker
+
+- name: Setup manager nodes.
+  import_playbook: tasks/manager.yml
+
+- name: Setup worker nodes.
+  import_playbook: tasks/worker.yml
