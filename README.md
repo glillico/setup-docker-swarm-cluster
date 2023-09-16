@@ -22,7 +22,7 @@ This playbook relies on the following ansible roles.
   - Edit the `main.yml` file.
     - Change `DOCKER_USER_NAME` to be the username that will be added to the `docker` group.
   - Run the playbook.
-    - `ansible-playbook mail.yml`
+    - `ansible-playbook main.yml`
 
 ## License
 
