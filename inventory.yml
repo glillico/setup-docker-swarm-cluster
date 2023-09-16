@@ -1,0 +1,17 @@
+---
+all:
+  children:
+    swarm:
+      children:
+        manager:
+          hosts:
+            pidkrnode1:
+              ansible_host: "10.0.100.11"
+        worker:
+          hosts:
+            pidkrnode2:
+              ansible_host: "10.0.100.12"
+            pidkrnode3:
+              ansible_host: "10.0.100.13"
+      vars:
+        ansible_user: ANSIBLE_USER_NAME
