@@ -12,5 +12,5 @@
     - name: Add worker nodes to swarm.
       docker_swarm:
         state: join
-        join_token: "{{ hostvars[groups['manager'][0]]['__dsc_swarm_info']['swarm_facts']['JoinTokens']['Worker'] }}"
+        join_token: "{{ hostvars[groups['manager'][0]]['dsc_swarm_info']['swarm_facts']['JoinTokens']['Worker'] }}"
         remote_addrs: "{{ groups['manager'][0] }}"

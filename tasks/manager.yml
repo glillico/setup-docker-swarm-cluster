@@ -12,12 +12,12 @@
     - name: Initialise a new swarm..
       docker_swarm:
         state: present
-      register: __dsc_swarm_info
+      register: dsc_swarm_info
       when: inventory_hostname in groups['manager'][0]
 
     - name: Add manager nodes to swarm.
       docker_swarm:
         state: join
-        join_token: "{{ hostvars[groups['manager'][0]]['__dsc_swarm_info']['swarm_facts']['JoinTokens']['Manager'] }}"
+        join_token: "{{ hostvars[groups['manager'][0]]['dsc_swarm_info']['swarm_facts']['JoinTokens']['Manager'] }}"
         remote_addrs: "{{ groups['manager'][0] }}"
       when: inventory_hostname not in groups['manager'][0]
