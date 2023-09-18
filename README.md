@@ -6,7 +6,7 @@ An Ansible playbook that installs [Docker](https://www.docker.com) and configure
 
 This playbook relies on the following ansible roles.
 
-* geerlingguy.docker
+  - [geerlingguy.docker](https://github.com/geerlingguy/ansible-role-docker/ )
 
 ## Usage
 
@@ -16,11 +16,13 @@ This playbook relies on the following ansible roles.
     - `$ cd setup-docker-swarm-cluster`
   - Install required roles.
     - `% ansible-galaxy role install -r requirements.yml`
+  - Copy the `example.inventory.yml` file to `inventory.yml`.
   - Edit the `inventory.yml` file.
     - Add your nodes to the relavent groups (manager/worker).
-    - Change `ANSIBLE_USER_NAME` to be that of your ansible user.
-  - Edit the `main.yml` file.
-    - Change `DOCKER_USER_NAME` to be the username that will be added to the `docker` group.
+    - Change the value of `ansible_user` to be that of your ansible user.
+  - Copy the `example.config.yml` file to `config.yml`.
+  - Edit the `config.yml` file.
+    - Change the value of `docker_users` to be the username(s) that will be added to the `docker` group.
   - Run the playbook.
     - `ansible-playbook main.yml`
 
