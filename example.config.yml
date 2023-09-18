@@ -1,0 +1,5 @@
+---
+# Variables for grrelingguy.docker
+# See https://github.com/geerlingguy/ansible-role-docker/ for details.
+docker_users:
+  - pi

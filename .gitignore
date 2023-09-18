@@ -3,3 +3,5 @@
 *.retry
 roles/*
 ansible_collections/*
+config.yml
+inventory.yml
