@@ -14,4 +14,4 @@ all:
             pidkrnode3:
               ansible_host: "10.0.100.13"
       vars:
-        ansible_user: ANSIBLE_USER_NAME
+        ansible_user: pi
