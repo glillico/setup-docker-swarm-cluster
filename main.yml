@@ -3,8 +3,8 @@
   hosts: swarm
   become: true
 
-  vars:
-    docker_users: DOCKER_USER_NAME
+  vars_files:
+    - config.yml
 
   roles:
     - role: geerlingguy.docker
